@@ -1,0 +1,189 @@
+h1 {
+    color:#000000;
+    background-color: black;
+    font-family: Montserrat;
+    font-size: 48px;
+    margin: 0;
+}
+
+p { color: #ffffff; 
+    font-family: Montserrat;
+    font-size: 16px;
+    color: #555;
+
+;}
+
+body{
+    background-color: #000001;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+img [src="assets/me111.jpg"]{
+    display: block;
+    margin: 0 auto;
+    border-radius: 50%;
+    width:50%;
+    height: auto;
+    min-width: 150px;
+    border: 4px solid #ffffff;
+
+}
+
+.text-section {
+    flex: 1;
+}
+
+.image-section img {
+    width: 300px;
+    border-radius: 10px;
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center; /* Centers the images */
+}
+
+.image-tile {
+    display: block;
+    width:30%;
+    height: 500px;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+.image-tile:hover {
+    /* width: 200px !important; */
+    transform: scale(1.05);
+}
+
+.image-tile:nth-child(2) {
+    width: 40%;
+}
+
+.image-tile:nth-child(3) {
+    width: 40%;
+}
+
+.buttonBlue {
+    border: none;
+    border-radius:10px;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+  }
+
+  .buttonBlue {
+    background-color: #000000; 
+    color: rgb(255, 255, 255); 
+    border: 2px solid white;
+  }
+  
+  .buttonBlue:hover {
+    background-color: #000000;
+    color: #6496f3;
+  }
+
+  .container {
+    max-width: 900px;
+    margin: 50px auto;
+    background: rgb(255, 255, 255);
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.nav {
+    text-align: right;
+    margin-bottom: 20px;
+}
+.nav a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+.social-links {
+    margin-top: 20px;
+}
+.social-links a {
+    text-decoration: none;
+    color: black;
+    margin-right: 20px;
+}
+
+.about-h1 {
+    color: #000000;
+    background-color: transparent;
+}
+
+.about-h1-span {
+    display: inline-block;
+    position: relative;
+}
+
+.holland {
+    left: 1.3em;
+}
+
+
+/* Default color for the link */
+.social-links a {
+    color: black;
+}
+.social-links a:hover {
+    color: #6496f3; 
+}
+
+.image-in-slide {
+    max-width: 100%;
+    margin: 0 auto;
+    display: block;
+}
+
+/* Adjust slider size */
+.swiper {
+    width: 400px; /* Adjust slider width */
+    height: 200px; /* Adjust slider height */
+}
+
+/* Ensure the image inside the slide is centered and fits well */
+.swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Adjust image size inside the first swiper-slide */
+.swiper-slide img {
+    width: 30%;  /* Adjust to a smaller width percentage */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: contain; /* Ensure the image does not get distorted */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body, html {
+    height: 100%;
+    overflow: hidden;
+    font-family: 'Arial', sans-serif;
+    background-color: black;
+    color: white;
+  }
+  

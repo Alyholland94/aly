@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+	<title>title</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<a href="index.html" class="buttonBlue buttonBlue1">HOME</a>
+		<a href="portfolio.html" class="buttonBlue buttonBlue1">PORTFOLIO</a>
+		<a href="photography.html" class="buttonBlue buttonBlue1">PHOTOGRAPHY</a>
+		<a href="about.html" class="buttonBlue buttonBlue1">ABOUT ME</a>
+    <meta charset="UTF-8">
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Floating Photo Grid</title>
+      <style>
+        body {
+          margin: 0;
+          padding: 0;
+          background-color: #000;
+          overflow: hidden;
+        }
+    
+        .floating-container {
+          position: relative;
+          width: 100vw;
+          height: 100vh;
+        }
+    
+        .floating-image {
+          position: absolute;
+          width: 200px;
+          height: auto;
+          border-radius: 12px;
+          transition: transform 0.3s ease;
+          animation: floatAround 15s infinite ease-in-out;
+        }
+    
+        .floating-image:hover {
+          transform: scale(1.1);
+          z-index: 1;
+        }
+    
+        @keyframes floatAround {
+          0%   { transform: translate(0, 0) rotate(0deg); }
+          25%  { transform: translate(20px, -40px) rotate(2deg); }
+          50%  { transform: translate(-30px, 20px) rotate(-2deg); }
+          75%  { transform: translate(10px, -10px) rotate(1deg); }
+          100% { transform: translate(0, 0) rotate(0deg); }
+        }
+      </style>
+    </head>
+    <body>
+    
+      <div class="floating-container">
+        <img class="floating-image" src="assets/jelly.jpg" style="top: 10%; left: 5%;">
+        <img class="floating-image" src="assets/leaves.jpg" style="top: 20%; left: 30%;">
+        <img class="floating-image" src="assets/butterfly.jpg" style="top: 40%; left: 15%;">
+        <img class="floating-image" src="assets/paris.jpg" style="top: 50%; left: 55%;">
+        <img class="floating-image" src="assets/castle.jpg" style="top: 30%; left: 70%;">
+        <img class="floating-image" src="assets/vicky.jpg" style="top: 70%; left: 20%;">
+        <img class="floating-image" src="assets/battersea.jpg" style="top: 60%; left: 75%;">
+      </div>
+    
+    </body>
+    </html>
+    

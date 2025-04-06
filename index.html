@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<a href="index.html" class="buttonBlue buttonBlue1">HOME</a>
+	<a href="portfolio.html" class="buttonBlue buttonBlue1">PORTFOLIO</a>
+		<a href="photography.html" class="buttonBlue buttonBlue1">PHOTOGRAPHY</a>
+		<a href="about.html" class="buttonBlue buttonBlue1">ABOUT ME</a>
+		
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Fast Collecting Bubbles</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background: black;
+    }
+
+    canvas {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="bubbleCanvas"></canvas>
+
+  <script>
+    const canvas = document.getElementById("bubbleCanvas");
+    const ctx = canvas.getContext("2d");
+
+    let width = canvas.width = window.innerWidth;
+    let height = canvas.height = window.innerHeight;
+
+    const totalBubbles = 100;
+    const bubbles = [];
+    const mouse = { x: width / 2, y: height / 2 };
+
+    // Create bubbles
+    function createBubble() {
+      return {
+        x: Math.random() * width,
+        y: Math.random() * height,
+        r: Math.random() * 5 + 2,
+        opacity: Math.random() * 0.5 + 0.2,
+        speed: Math.random() * 2 + 1
+      };
+    }
+
+    for (let i = 0; i < totalBubbles; i++) {
+      bubbles.push(createBubble());
+    }
+
+    // Mouse tracking
+    document.addEventListener('mousemove', (e) => {
+      mouse.x = e.clientX;
+      mouse.y = e.clientY;
+    });
+
+    function animate() {
+      ctx.clearRect(0, 0, width, height);
+
+      bubbles.forEach((b, i) => {
+        // Vector toward mouse
+        const dx = mouse.x - b.x;
+        const dy = mouse.y - b.y;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+        const angle = Math.atan2(dy, dx);
+
+        // Move faster toward mouse
+        b.x += Math.cos(angle) * b.speed;
+        b.y += Math.sin(angle) * b.speed;
+
+        // If bubble gets close to mouse, reset it to edge
+        if (dist < 20) {
+          bubbles[i] = createBubble();
+        }
+
+        // Draw bubble
+        ctx.beginPath();
+        ctx.arc(b.x, b.y, b.r, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(255, 255, 255, ${b.opacity})`;
+        ctx.fill();
+      });
+
+      requestAnimationFrame(animate);
+    }
+
+    // Responsive canvas
+    window.addEventListener('resize', () => {
+      width = canvas.width = window.innerWidth;
+      height = canvas.height = window.innerHeight;
+    });
+
+    animate();
+	
+  </script>
+</body>
+</html>
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>title</title>
+		<link rel="stylesheet" href="style.css">
+	</head>
+	<body>
+		<a href="index.html" class="buttonBlue buttonBlue1">HOME</a>
+		<a href="about.html" class="buttonBlue buttonBlue1">ABOUT ME</a>
+		<a href="photography.html" class="buttonBlue buttonBlue1">PHOTOGRAPHY</a>
+		
+
